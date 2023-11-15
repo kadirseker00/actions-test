@@ -1,8 +1,16 @@
 name: run main.py
 
+#on:
+#  schedule:
+#    - cron: '0 0 * * 1' # At 00:00 on Monday
+
+# Controls when the workflow will run
 on:
-  schedule:
-    - cron: '0 0 * * 1' # At 00:00 on Monday
+    # Triggers the workflow on push or pull request events but only for the main branch
+    push:
+      branches: [ main ]
+    pull_request:
+      branches: [ main ]
 
 jobs:
   build:
